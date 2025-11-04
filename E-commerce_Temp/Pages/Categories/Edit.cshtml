@@ -1,0 +1,40 @@
+﻿@page
+@model E_commerce_Temp.Pages.Categories.EditModel
+
+<form method="post">
+    <input asp-for="Category.Id" hidden />
+    <div class="container">
+        <div class="row pt-4 pb-3">
+            <div class="col-6">
+                <h2 class="text-primary">
+                    Create New Category
+                </h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-page="/categories/index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left-circle"></i> Back to Category List
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Category.Name" class="form-label"></label>
+            <input asp-for="Category.Name" class="form-control" />
+            <span asp-validation-for="Category.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Category.Description" class="form-label"></label>
+            <input asp-for="Category.Description" class="form-control" />
+            <span asp-validation-for="Category.Description" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
